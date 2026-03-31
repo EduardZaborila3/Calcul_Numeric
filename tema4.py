@@ -5,7 +5,7 @@ def citeste_vector(nume_fisier):
     try:
         with open(nume_fisier, 'r') as f:
             for line in f:
-                if line.strip():  # Ignorăm liniile goale
+                if line.strip():  
                     vector.append(float(line.strip()))
     except FileNotFoundError:
         print(f"Eroare: Fisierul {nume_fisier} nu a putut fi gasit.")
@@ -90,13 +90,11 @@ def rezolva_sistem_rar(fisier_d0, fisier_d1, fisier_d2, fisier_b, putere_epsilon
         norma_infinit = max(abs(y[i] - b[i]) for i in range(n))
         print(f"6. Norma infinit ||A*x_GS - b||_inf : {norma_infinit}")
         
-        # Optional: Poti returna sau afisa vectorul solutie x
-        # print(f"Solutia x (primele 10 elemente): {x[:10]}")
+
     else:
         print("Sistemul NU a convers in numarul maxim de iteratii (10.000).")
 
 if __name__ == "__main__":
-    # Switch with 1, 2, 3, 4, 5
     i = 1 
     print(f"--- Rulare pentru sistemul {i} ---")
     rezolva_sistem_rar(
